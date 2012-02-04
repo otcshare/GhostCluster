@@ -1,0 +1,90 @@
+Name: meego-ux-settings
+Summary: MeeGo UX Centralized Settings
+Version: 0.4.8
+Release: 1
+Group: Applications/System
+License: Apache 2.0
+URL: http://www.meego.com
+Sources:
+    - "%{name}-%{version}.tar.bz2"
+Description: |
+    Core settings app for the MeeGo UX
+    
+PkgBR:
+    - pkgconfig(QtCore) >= 4.7.0
+    - connman-qt-devel
+    - bluetooth-qt-devel
+
+PkgConfigBR:
+    - gconf-2.0
+    - gnome-keyring-1
+    - mlite
+    - ofono-qt
+    - syncevolution-qt-dbus
+
+Requires:
+    - meegotouch-applauncherd-lbooster
+
+Configure: none
+Builder: make
+Requires:
+    - meegolabs-ux-components
+    - meego-ux-components
+    - bluetooth-qt
+    - connman-qt
+    - meego-ux-settings-libsettings
+    - libofono-qt
+    - mobile-broadband-provider-info
+Files:
+- "%{_datadir}/meego-ux-settings/Wifi"
+- "%{_datadir}/meego-ux-settings/Bluetooth"
+- "%{_datadir}/meego-ux-settings/Browser"
+- "%{_datadir}/meego-ux-settings/General"
+- "%{_datadir}/meego-ux-settings/Panels"
+- "%{_datadir}/meego-ux-settings/Sync"
+- "%{_datadir}/meego-ux-settings/Notifications"
+- "%{_datadir}/meego-ux-settings/*.qml"
+- "%{_datadir}/meego-ux-settings/apps/connectivity.desktop"
+- "%{_datadir}/meego-ux-settings/apps/browser.desktop"
+- "%{_datadir}/meego-ux-settings/apps/bluetooth.desktop"
+- "%{_datadir}/meego-ux-settings/apps/panels.desktop"
+- "%{_datadir}/meego-ux-settings/apps/sync.desktop"
+- "%{_datadir}/meego-ux-settings/apps/general.desktop"
+- "%{_datadir}/applications/meego-ux-settings.desktop"
+SubPackages:
+- Name: personalize
+  Summary: Personalize settings
+  Group: System/Libraries
+  Files:
+        - "%{_datadir}/meego-ux-settings/apps/personalize.desktop"
+        - "%{_datadir}/meego-ux-settings/Personalize"
+  Description: |
+       This contains personalization settins for wallpaper and other settings
+
+- Name: examples
+  Summary: Example applets
+  Group: System/Libraries
+  Files:
+        - "%{_datadir}/meego-ux-settings/Example"
+        - "%{_datadir}/meego-ux-settings/apps/declarativeexample.desktop"
+  Description: |
+        This contains example applets for developers
+
+- Name: libsettings
+  Summary: Import library for settings
+  Group: System/Libraries
+  Files:
+        - "%{_libdir}/qt4/imports/MeeGo/Settings"
+        - "%{_libdir}/qt4/imports/MeeGo/Sync"
+  Description: |
+        This library is used by the meego-ux-settings infrastructure
+
+- Name: developer-hacks
+  Summary: Settings page for developers to help make life easier
+  Group: System/Libraries
+  Files:
+        - "%{_datadir}/meego-ux-settings/Hacks"
+        - "%{_datadir}/meego-ux-settings/apps/hacks.desktop"
+        - "%{_datadir}/pixmaps/icn_hacks.png"
+  Description: |
+        This is a page for developers.

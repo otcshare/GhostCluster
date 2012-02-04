@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Name=Gauge Cluster
+Exec=chromium-browser --enable-plugins --enable-extensions --enable-user-scripts --enable-printing --enable-sync --use-gl=egl --ignore-gpu-blacklist --auto-ssl-client-auth %U --app-id=amoghkkfcnehdmncicoalopagkphdjaf --load-extension=/usr/share/rabbit/ --no-first-run
+Icon=GhostCluster
+X-Window-Icon=GhostCluster
+StartupWMClass=Chromium
+StartupNotify=true
