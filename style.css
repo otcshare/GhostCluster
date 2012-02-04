@@ -30,7 +30,7 @@
 }
 
 #mainbox {
-	background: url("tachometer-assets/tachometer-background.jpg") top left no-repeat;
+	background: url("assets/tachometer-background.jpg") top left no-repeat;
 }
 
 #infoarea {
@@ -114,7 +114,7 @@
 
 .needleParent {
 	position: relative;
-	background: url("tachometer-assets/dial-main-bg.png") top left no-repeat;
+	background: url("assets/dial-main-bg.png") top left no-repeat;
 	height: 607px;
 	width: 626px;
 	//-webkit-border-radius: 360px;
@@ -125,7 +125,7 @@
 	z-index: 140;
 	margin-top: 110px;
 	margin-left: 120px;
-	background: url("tachometer-assets/dial-main-center-bg.png") top left no-repeat;
+	background: url("assets/dial-main-center-bg.png") top left no-repeat;
 	height: 390px;
 	width: 382px;
 	//-webkit-border-radius: 250px;

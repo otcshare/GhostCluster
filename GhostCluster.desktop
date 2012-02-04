@@ -2,7 +2,7 @@
 [Desktop Entry]
 Version=1.0
 Name=GhostCluster
-Comment=I see dead processes
+Comment=guage cluster application
 GenericName=GhostCluster
 Exec=chromium-browser --enable-plugins --enable-extensions --enable-user-scripts --enable-printing --enable-sync --use-gl=egl --ignore-gpu-blacklist --auto-ssl-client-auth %U --app-id=pcalifdijfgkblklmnofmioajppkaalb  --load-extension=/usr/share/GhostCluster/ --no-first-run
 Terminal=false
