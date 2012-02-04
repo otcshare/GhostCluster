@@ -1,17 +1,16 @@
 {
-   "app": {
-      "launch": {
-         "container": "panel",
-         "local_path": "index.html"
-      }
-   },
-   "description": "__MSG_appDescription__",
-   "icons": {
-      "128": "GhostCluster.png"
-   },
-   "key":"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKLMzzBw5KctAVIJUtNIlSlX0/aKBSmwhACjzqhbtldslfqwEl9YYc1C0P5hnqEAjr/bV4sYIJKxs6JijNfm3WbmqropTlPwDEDqVBTMw/GQYbZu6AxvAYPwOhav1RSM6KKQ2AVgLBtnvgcfsRBJ+pAICizvqhVw9eMkpvlZGOy3AgMBAAECgYAc/KSjdmZwEcZbageSUSkl7Fp0WkzjCGfoiUIhnfrQhCgMM8+BpIX9ezklIhKRjjzcklx7Cre6BuP6NNvpEVU4VWrBKc4X+F4vGE2RawRFXqpIgObl4z1XwhD/ui6S1iDbeTN4OISBe1nv4d5gMkqjogvZTv1YURBs4LCSf0lOiQJBANdBtUbLdIIVcKynSTFNcvYL46yDTjUlrIrJllIWgjHMfxMZh0ijd1Or068HENrvR4fksd9IWDDYZCICYkXRqWsCQQDBnU7C5GqIAG8sqHrF665uHWpwF/DsPELR6JjeE+8TDHu592njCn6njeKJCDM839jAvqAZhAtXqS39MTvK3SDlAkEAwlj2NbQOPkDjWU80m0oFCLdVWXW4D+4y6Z/2k6j05cdv2CvNZD0KyMWzuyyTAEjX+Y73NdSYo4lMZxRl7AnPfwJBAME5egocpYjXThx2hBiUTj+M0dXOvt00gsc0Z6Nyp20OT0hX9+/jYGVdv5Bcg64kBBDP7b2pPxycNc5y3SZnK1UCQE+w/N5eG7odi326k7DLJ+5kNtxqSRIQ3LUh39A2kQ9pOlsPasCmGNDgn/9wzcSqxHjiSQQ2tWof9nv7/gIxiwA=",
-   "version": "0.2012.2.3",
-   "name": "__MSG_appName__",
-   "permissions": [ ]
-
+    "app": {
+        "launch": {
+            "container": "panel",
+            "local_path": "index.html"
+        }
+    },
+    "description": "__MSG_appDescription__",
+    "icons": {
+        "128": "GhostCluster.png"
+    },
+    "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDKUfBBReEF2Dt0HX3vkweAc/jzUYZ882xjRMVuLju88kzmcuwJ9DZW1OQ7K4TYitVx91uJFOTnMixFcNMKsRNm8l5OEhxqZsuzWyuY+aoWk3q+wD2DsHy/AhNilqU5xYRRJgifv3uCh62gcnPeCjn3iNIyC7SW+ZaTz4KyDsTJMQIDAQAB",
+    "name": "__MSG_appName__",
+    "permissions": [],
+    "version": "0.2012.2.3"
 }

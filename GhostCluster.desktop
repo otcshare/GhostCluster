@@ -1,11 +1,14 @@
+
 [Desktop Entry]
-Encoding=UTF-8
 Version=1.0
-Type=Application
+Name=GhostCluster
+Comment=I see dead processes
+GenericName=GhostCluster
+Exec=chromium-browser --enable-plugins --enable-extensions --enable-user-scripts --enable-printing --enable-sync --use-gl=egl --ignore-gpu-blacklist --auto-ssl-client-auth %U --app-id=pcalifdijfgkblklmnofmioajppkaalb  --load-extension=/usr/share/GhostCluster/ --no-first-run
 Terminal=false
-Name=Gauge Cluster
-Exec=chromium-browser --enable-plugins --enable-extensions --enable-user-scripts --enable-printing --enable-sync --use-gl=egl --ignore-gpu-blacklist --auto-ssl-client-auth %U --app-id=amoghkkfcnehdmncicoalopagkphdjaf --load-extension=/usr/share/rabbit/ --no-first-run
+X-MultipleArgs=false
+Type=Application
 Icon=GhostCluster
-X-Window-Icon=GhostCluster
+Categories=Game;
 StartupWMClass=Chromium
 StartupNotify=true
