@@ -10,8 +10,6 @@ PKG_NAME := $(PROJECT)
 SPECFILE = $(addsuffix .spec, $(PKG_NAME))
 YAMLFILE = $(addsuffix .yaml, $(PKG_NAME))
 
-include /usr/share/packaging-tools/Makefile.common
-
 all:
 	@echo "Nothing to build"
 
@@ -23,6 +21,9 @@ install:
 	cp $(PROJECT).desktop $(DESKTOP_DIR)/
 	mkdir -p $(ICON_DIR)/
 	cp $(PROJECT).png $(ICON_DIR)/$(PROJECT).png
+
+spec: 
+	specify $<
 
 dist:
 	rm -rf $(PACKAGE)
