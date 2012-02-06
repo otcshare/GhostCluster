@@ -6,6 +6,12 @@ ICON_DIR    = ${DESTDIR}/usr/share/pixmaps
 VERSION     = $(shell grep version manifest.json | cut -f4 -d"\"")
 PACKAGE     = $(PROJECT)-$(VERSION)
 
+PKG_NAME := $(PROJECT)
+SPECFILE = $(addsuffix .spec, $(PKG_NAME))
+YAMLFILE = $(addsuffix .yaml, $(PKG_NAME))
+
+include /usr/share/packaging-tools/Makefile.common
+
 all:
 	@echo "Nothing to build"
 
@@ -19,5 +25,8 @@ install:
 	cp $(PROJECT).png $(ICON_DIR)/$(PROJECT).png
 
 dist:
-	tar czf ../$(PACKAGE).tar.gz . 
+	rm -rf $(PACKAGE)
+	mkdir $(PACKAGE)
+	git clone . $(PACKAGE)
+	tar czf $(PACKAGE).tar.gz $(PACKAGE)
 	

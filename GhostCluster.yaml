@@ -22,6 +22,6 @@ Requires:
     - chromium
 
 Files:
-- "%{_datadir}/GhostCluster
+- "%{_datadir}/GhostCluster"
 - "%{_datadir}/applications/GhostCluster.desktop"
 - "%{_datadir}/pixmaps/GhostCluster.png"
