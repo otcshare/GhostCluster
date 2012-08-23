@@ -10,7 +10,7 @@ var engineLoadStream;
 var engineoiltemp;
 var mafStream;
 
-var nobdy;
+var vehicle;
 
 var mpgReadings = 0;
 var prevMpg = 0;
@@ -35,25 +35,49 @@ function calcAverageVelocity(newVel) {
 	$("#avgspeed").text(Math.floor(averageVel));
 }
 
+function connected()
+{
+    setInterval(function() {
+                  vehicle.get("running_status_speedometer", function(data) {
+
+                                  adjvalue = data[0].value;
+                                  var velocityUnits = $('#velocityUnits');
+
+                                  if(velocityUnits.text() === "MPH")
+                                      adjvalue = Math.floor(data[0].value * 0.62137);
+
+                                  $('#velocity').text(adjvalue);
+
+                                  calcAverageVelocity(adjvalue);
+                              },
+                              function() { });
+              },1000);
+}
+
 window.onload = function()
 {
+            vehicle = new Vehicle(connected, function(){$('#velocity').text("ERR");}, "ws://localhost:23000", "http-only");
+
 	var velocityUnits = $('#velocityUnits');
 	velocityUnits.click(function() {
-							  if(velocityUnits.text() == "MPH")
+                              if(velocityUnits.text() === "MPH")
 							  {
 								  velocityUnits.text("KPH");
 							  }
 							  else velocityUnits.text("MPH");
 						});
 
-	nobdy.connected = function () {
+
+
+
+    /*nobdy.connected = function () {
 		if(nobdy.supported.Velocity) {
 			velocityStream = nobdy.createStream(nobdy.supported.Velocity);
 			velocityStream.changed = function (value) {
 
 				adjvalue = value;
 
-				if(velocityUnits.text() == "MPH")
+                if(velocityUnits.text() === "MPH")
 					adjvalue = Math.floor(value * 0.62137);
 
 				$('#velocity').text(adjvalue);
@@ -137,7 +161,7 @@ window.onload = function()
 				calcAverageMpg(mpg);
 			}
 		}
-	}
+    }*/
 
-	nobdy.connect("localhost:8082");
+    //nobdy.connect("localhost:8082");
 }
