@@ -50,7 +50,28 @@ function connected()
 
                                   calcAverageVelocity(adjvalue);
                               },
-                              function() { });
+                              function() { } );
+
+                    vehicle.get("running_status_engine_speed", function(data) {
+                                    var value = data[0].value;
+                                    if(value > 10000) value =10000;
+                                    var needleDegs = value / 10000 * 180;
+                                    $('#rpms').text(value);
+                                    $('#rpmNeedle').css("-webkit-transform","rotate("+needleDegs+"deg)");
+                                },
+                                function() { } );
+
+                    vehicle.get("running_status_transmission_gear_status", function(data) {
+                                    value = data[0].value;
+                                    $('#gear').text(value);
+                                },
+                                function() { } );
+
+                    vehicle.get("running_status_steering_wheel_angle", function(data) {
+                                    value = data[0].value;
+                                    $('#wheel').css("-webkit-transform","rotate("+value+"deg)");
+                                },
+                                function() { } );
               },1000);
 }
 
