@@ -329,11 +329,11 @@ Vehicle.prototype.receive = function(msg)
                 if(call&&(!call.done)&&(call.transactionid === event.transactionid))
                 {
                     call.finish();
-                    if(event.error != undefined)
+                    if(event.error !== undefined)
                     {
                         call.errorCB(event.error);
                     }
-                    if(event.data != undefined)
+                    if(event.data !== undefined && call.successCB !== undefined)
                     {
                         call.successCB(event.data);
                     }

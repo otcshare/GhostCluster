@@ -37,7 +37,42 @@ function calcAverageVelocity(newVel) {
 
 function connected()
 {
-    setInterval(function() {
+    vehicle.subscribe(["running_status_speedometer", "running_status_engine_speed", "running_status_transmission_gear_status", "running_status_steering_wheel_angle"]);
+    vehicle.subscribe(["running_status_engine_speed"]);
+    vehicle.subscribe(["running_status_transmission_gear_status"]);
+    vehicle.subscribe(["running_status_steering_wheel_angle"]);
+
+    document.addEventListener("running_status_speedometer",function(data) {
+
+                                  adjvalue = data.value;
+                                  var velocityUnits = $('#velocityUnits');
+
+                                  if(velocityUnits.text() === "MPH")
+                                      adjvalue = Math.floor(data.value * 0.62137);
+
+                                  $('#velocity').text(adjvalue);
+
+                                  calcAverageVelocity(adjvalue);
+                              },false);
+
+    document.addEventListener("running_status_engine_speed", function(data) {
+                                  var value = data.value;
+                                  if(value > 10000) value =10000;
+                                  var needleDegs = value / 10000 * 180;
+                                  $('#rpms').text(value);
+                                  $('#rpmNeedle').css("-webkit-transform","rotate("+needleDegs+"deg)");
+                              },false);
+
+    document.addEventListener("running_status_transmission_gear_status",function(data) {
+                                  value = data.value;
+                                  $('#gear').text(value);
+                              },false);
+
+    document.addEventListener("running_status_steering_wheel_angle", function(data) {
+                                  value = data.value;
+                                  $('#wheel').css("-webkit-transform","rotate("+value+"deg)");
+                              },false);
+   /* setInterval(function() {
                   vehicle.get("running_status_speedometer", function(data) {
 
                                   adjvalue = data[0].value;
@@ -72,7 +107,7 @@ function connected()
                                     $('#wheel').css("-webkit-transform","rotate("+value+"deg)");
                                 },
                                 function() { } );
-              },1000);
+              },1000);*/
 }
 
 window.onload = function()
