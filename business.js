@@ -41,6 +41,8 @@ function connected()
     vehicle.subscribe(["running_status_engine_speed"]);
     vehicle.subscribe(["running_status_transmission_gear_status"]);
     vehicle.subscribe(["running_status_steering_wheel_angle"]);
+    vehicle.subscribe(["ThrottlePosition"]);
+    vehicle.subscribe(["EngineCoolantTemperature"]);
 
     document.addEventListener("running_status_speedometer",function(data) {
 
@@ -72,6 +74,24 @@ function connected()
                                   value = data.value;
                                   $('#wheel').css("-webkit-transform","rotate("+value+"deg)");
                               },false);
+
+    document.addEventListener("ThrottlePosition", function(data) {
+                                  value = data.value;
+                                  var needleDegs = (value / 100 * 180) + 270
+
+                                  $('#throttleNeedle').css("-webkit-transform","rotate("+needleDegs+"deg)");
+
+                              },false);
+
+    document.addEventListener("EngineCoolantTemperature", function(data) {
+                                  value = data.value;
+                                  var needleDegs = (value / 180 * 70) + 270
+
+                                  $('#engineCoolantNeedle').css("-webkit-transform","rotate("+needleDegs+"deg)");
+
+                              },false);
+
+
    /* setInterval(function() {
                   vehicle.get("running_status_speedometer", function(data) {
 
