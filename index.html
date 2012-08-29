@@ -26,11 +26,16 @@
 
 		<div class="vbox">
 			<div class="hbox">
-				<div class="gauge" >
-					<img src="assets/dial-IAT-bg.png" >
-						<div id="iatNeedle" class="needle"></div>
-					</img>
-				</div>
+                        <div id="gaugeRow">
+                        <div class="gauge" >
+                        <img src="assets/dial-IAT-bg.png" >
+                        <div id="iatNeedle" class="needle"></div>
+                        </img>
+                        </div>
+                        <div class="gauge" >
+                        <img id="wheel" src="assets/wheel.png" />
+                        </div>
+                        </div>
 
 				<div id="gaugeRow">
 					<div class="gauge">
@@ -55,6 +60,10 @@
 					<div class="rightAlignText middleText">AVG MPG</div>
 					<div id="avgmpg" class="leftAlignText middleText">0</div>
 				</div>
+                                <div class="row underborder" >
+                                        <div class="rightAlignText middleText">Gear</div>
+                                        <div id="gear" class="leftAlignText middleText">0</div>
+                                </div>
 				<div class="row" >
 					<div class="rightAlignText middleText">AVG SPEED</div>
 					<div id="avgspeed" class="leftAlignText middleText">0</div>
