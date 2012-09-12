@@ -3,12 +3,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
-                <script type="text/javascript" src="api.js" ></script>
-		<script type="text/javascript" src="jquery-1.6.2.js" ></script>
+				<script type="text/javascript" src="api.js" ></script>
 		<script type="text/javascript" src="business.js" ></script>
+		<link rel="stylesheet" href="jquery.mobile-1.2.0-beta.1.min.css" />
+		<script src="jquery-1.8.1.min.js"></script>
+		<script src="jquery.mobile-1.2.0-beta.1.min.js"></script>
 
     </head>
     <body>
+	<div data-role="page">
+	<div data-role="header"><h1>GhostCluster</h1></div>
+	<div data-role="content">
+
+	<a href="#popupBasic" data-role="button" data-rel="popup">Connect</a>
+
+	<div data-role="popup" id="popupBasic" data-transition="flip">
+		<form>
+			<label>Address:</label>
+			<input type="text" id="address" name="address" data-theme="a">
+			<div id="connectButton" data-role="button" >Connect</div>
+		</form>
+	</div>
+
 	<div id="mainbox" class="hbox" >
 		<div class="needleParent" >
 			<div id="rpmNeedle" class="needle"></div>
@@ -60,10 +76,10 @@
 					<div class="rightAlignText middleText">AVG MPG</div>
 					<div id="avgmpg" class="leftAlignText middleText">0</div>
 				</div>
-                                <div class="row underborder" >
-                                        <div class="rightAlignText middleText">Gear</div>
-                                        <div id="gear" class="leftAlignText middleText">0</div>
-                                </div>
+				<div class="row underborder" >
+					<div class="rightAlignText middleText">Gear</div>
+					<div id="gear" class="leftAlignText middleText">0</div>
+				</div>
 				<div class="row" >
 					<div class="rightAlignText middleText">AVG SPEED</div>
 					<div id="avgspeed" class="leftAlignText middleText">0</div>
@@ -72,6 +88,8 @@
 			</div>
 
 		</div>
+	</div>
+	</div>
 	</div>
     </body>
 </html>
