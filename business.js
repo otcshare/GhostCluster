@@ -111,8 +111,10 @@ window.onload = function()
     }
 
     $("#address").val(addy);
+    $("#address").change(function() { localStorage.address = $("#address").val(); });
+    $("#connectButton").click(function() { connect(addy) });
 
-    $("#connectButton").click(function() { connect(addy) })
+
 
     connect(addy);
 
