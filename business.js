@@ -43,6 +43,7 @@ function connected()
     vehicle.subscribe(["running_status_steering_wheel_angle"]);
     vehicle.subscribe(["ThrottlePosition"]);
     vehicle.subscribe(["EngineCoolantTemperature"]);
+    vehicle.subscribe(["MachineGunTurretStatus"]);
 
     document.addEventListener("running_status_speedometer",function(data) {
 
@@ -88,6 +89,13 @@ function connected()
                                   var needleDegs = (value / 180 * 70) + 270
 
                                   $('#engineCoolantNeedle').css("-webkit-transform","rotate("+needleDegs+"deg)");
+
+                              },false);
+
+    document.addEventListener("MachineGunTurretStatus", function(data) {
+                                  value = data.value;
+                                  if(value === true)
+                                      $('#machineGunTurretPopup').popup('open');
 
                               },false);
 
