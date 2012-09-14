@@ -38,9 +38,9 @@ function calcAverageVelocity(newVel) {
 function connected()
 {
     vehicle.subscribe(["running_status_speedometer", "running_status_engine_speed", "running_status_transmission_gear_status", "running_status_steering_wheel_angle"]);
-    vehicle.subscribe(["running_status_engine_speed"]);
-    vehicle.subscribe(["running_status_transmission_gear_status"]);
-    vehicle.subscribe(["running_status_steering_wheel_angle"]);
+    //vehicle.subscribe(["running_status_engine_speed"]);
+    //vehicle.subscribe(["running_status_transmission_gear_status"]);
+    //vehicle.subscribe(["running_status_steering_wheel_angle"]);
     vehicle.subscribe(["ThrottlePosition"]);
     vehicle.subscribe(["EngineCoolantTemperature"]);
     vehicle.subscribe(["MachineGunTurretStatus"]);
@@ -74,6 +74,7 @@ function connected()
     document.addEventListener("running_status_steering_wheel_angle", function(data) {
                                   value = data.value;
                                   $('#wheel').css("-webkit-transform","rotate("+value+"deg)");
+                                  $('#machinegun').css("-webkit-transform","rotate("+value+"deg)");
                               },false);
 
     document.addEventListener("ThrottlePosition", function(data) {
@@ -94,8 +95,9 @@ function connected()
 
     document.addEventListener("MachineGunTurretStatus", function(data) {
                                   value = data.value;
-                                  if(value === true)
+                                  if(value === "1")
                                       $('#machineGunTurretPopup').popup('open');
+                                  else $('#machineGunTurretPopup').popup('close');
 
                               },false);
 
