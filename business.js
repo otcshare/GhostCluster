@@ -112,7 +112,7 @@ function connect(addy)
 
 window.onload = function()
 {
-    var addy = "localhost:23000";
+    var addy = "127.0.0.1:23000";
 
     if(typeof(Storage)!== "undefined")
     {
