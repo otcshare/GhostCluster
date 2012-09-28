@@ -68,7 +68,12 @@ function connected()
 
     document.addEventListener("running_status_transmission_gear_status",function(data) {
                                   value = data.value;
-                                  $('#gear').text(value);
+								  if(value == 128)
+									  $('#gear').text('Reverse');
+								  else if(value == 0)
+									  $('#gear').text('Neutral');
+                                  else $('#gear').text(value);
+								  
                               },false);
 
     document.addEventListener("running_status_steering_wheel_angle", function(data) {

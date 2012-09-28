@@ -148,7 +148,7 @@ body {
 #wheel {
         -webkit-transform:rotate(0deg);
         -webkit-transform-origin: 50% 50%;
-		-webkit-transition: all 100ms;
+		-webkit-transition: all;
 }
 
 #iatNeedle {
