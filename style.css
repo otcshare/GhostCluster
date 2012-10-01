@@ -160,7 +160,7 @@ body {
 	bottom: 50%;
 	-webkit-transform:rotate(143deg);
 	-webkit-transform-origin: 50% 100%;
-	-webkit-transition: all 200ms ease-in-out;
+	-webkit-transition: all 1ms;
 	-webkit-border-radius: 5px;
 }
 
@@ -173,7 +173,7 @@ body {
 	bottom: 50%;
 	-webkit-transform:rotate(270deg);
 	-webkit-transform-origin: 50% 100%;
-	-webkit-transition: all 1s cubic-bezier(0.25,0.1,0.25,1);
+	-webkit-transition: all 1ms;
 	-webkit-border-radius: 5px;
 }
 
@@ -186,7 +186,7 @@ body {
 	bottom: 50%;
 	-webkit-transform:rotate(270deg);
 	-webkit-transform-origin: 50% 100%;
-	-webkit-transition: all 1s cubic-bezier(0.25,0.1,0.25,1);
+	-webkit-transition: all 1ms;
 	-webkit-border-radius: 5px;
 }
 
@@ -198,7 +198,7 @@ body {
 	left: 51%;
 	bottom: 51%;
 	-webkit-transform-origin: 50% 100%;
-	-webkit-transition: all 1s cubic-bezier(0.25,0.1,0.25,1);
+	-webkit-transition: all 1ms;
 	-webkit-border-radius: 17px;
 }
 
@@ -211,7 +211,7 @@ body {
 	bottom: 50%;
 	-webkit-transform:rotate(340deg);
 	-webkit-transform-origin: 50% 100%;
-	-webkit-transition: all 200ms ease-in-out;
+	-webkit-transition: all 1ms;
 	-webkit-border-radius: 5px;
 }
 
@@ -224,6 +224,6 @@ body {
 	bottom: 50%;
 	-webkit-transform:rotate(225deg);
 	-webkit-transform-origin: 50% 100%;
-	-webkit-transition: all 200ms ease-in-out;
+	-webkit-transition: all 1ms;
 	-webkit-border-radius: 5px;
 }
