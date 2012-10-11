@@ -16,7 +16,7 @@ all:
 install:
 	mkdir -p $(INSTALL_DIR)/
 	cp -a assets $(INSTALL_DIR)/
-	cp index.html *.js style.css manifest.json $(PROJECT).png $(INSTALL_DIR)/
+	cp index.html *.js *.css manifest.json $(PROJECT).png $(INSTALL_DIR)/
 	mkdir -p $(DESKTOP_DIR)/
 	cp $(PROJECT).desktop $(DESKTOP_DIR)/
 	mkdir -p $(ICON_DIR)/
