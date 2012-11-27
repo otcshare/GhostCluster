@@ -37,15 +37,19 @@ function calcAverageVelocity(newVel) {
 
 function connected()
 {
-    vehicle.subscribe(["running_status_speedometer", "running_status_engine_speed", "running_status_transmission_gear_status", "running_status_steering_wheel_angle"]);
+    /*vehicle.subscribe(["running_status_speedometer", "running_status_engine_speed", "running_status_transmission_gear_status", "running_status_steering_wheel_angle"]);
     //vehicle.subscribe(["running_status_engine_speed"]);
     //vehicle.subscribe(["running_status_transmission_gear_status"]);
     //vehicle.subscribe(["running_status_steering_wheel_angle"]);
     vehicle.subscribe(["ThrottlePosition"]);
     vehicle.subscribe(["EngineCoolantTemperature"]);
     vehicle.subscribe(["MachineGunTurretStatus"]);
+    vehicle.subscribe(["AirIntakeTemperature"]);*/
 
-    document.addEventListener("running_status_speedometer",function(data) {
+    vehicle.subscribe(["VehicleSpeed","EngineSpeed","MassAirFlow","AirIntakeTemperature","ThrottlePosition","EngineCoolantTemperature", "TransmissionGearStatus",
+                       "SteeringWheelAngle","MachineGunTurretStatus"]);
+
+    document.addEventListener("VehicleSpeed",function(data) {
 
                                   adjvalue = data.value;
                                   var velocityUnits = $('#velocityUnits');
@@ -58,7 +62,7 @@ function connected()
                                   calcAverageVelocity(adjvalue);
                               },false);
 
-    document.addEventListener("running_status_engine_speed", function(data) {
+    document.addEventListener("EngineSpeed", function(data) {
                                   var value = data.value;
                                   if(value > 10000) value =10000;
                                   var needleDegs = value / 10000 * 180;
@@ -66,7 +70,7 @@ function connected()
                                   $('#rpmNeedle').css("-webkit-transform","rotate("+needleDegs+"deg)");
                               },false);
 
-    document.addEventListener("running_status_transmission_gear_status",function(data) {
+    document.addEventListener("TransmissionGearStatus",function(data) {
                                   value = data.value;
 								  if(value == 128)
 									  $('#gear').text('Reverse');
@@ -76,7 +80,7 @@ function connected()
 								  
                               },false);
 
-    document.addEventListener("running_status_steering_wheel_angle", function(data) {
+    document.addEventListener("SteeringWheelAngle", function(data) {
                                   value = data.value;
                                   $('#wheel').css("-webkit-transform","rotate("+value+"deg)");
                                   $('#machinegun').css("-webkit-transform","rotate("+value+"deg)");
