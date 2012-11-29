@@ -107,8 +107,8 @@ function Vehicle(sCB, eCB, url, protocol)
     this.socketProtocol = "http-only";
 
     /* override the websocket address if parameters are given */
-    if(url != undefined) this.socketUrl = url;
-    if(protocol != undefined) this.socketProtocol = protocol;
+    if(url !== undefined) this.socketUrl = url;
+    if(protocol !== undefined) this.socketProtocol = protocol;
 
     this.VehicleMethodCall = function(id, name, successCB, errorCB)
     {
@@ -121,7 +121,7 @@ function Vehicle(sCB, eCB, url, protocol)
         this.start = function()
         {
             me.timeout = setTimeout(function(){
-                if(me.errorCB != undefined)
+                if(me.errorCB !== undefined)
                 {
                     me.errorCB("\""+me.name+"\" method timed out after "+self.timeouttime+"ms");
                 }
@@ -130,7 +130,7 @@ function Vehicle(sCB, eCB, url, protocol)
         }
         this.finish = function()
         {
-            if(me.timeout != undefined)
+            if(me.timeout !== undefined)
             {
                 clearTimeout(me.timeout);
             }
@@ -202,7 +202,7 @@ Vehicle.prototype.send = function(obj, successCB, errorCB)
 {
     if(!this.connected)
     {
-        if(errorCB != undefined)
+        if(errorCB !== undefined)
         {
             errorCB("\""+obj.name+"\" method failed because socket is closed");
         }
@@ -312,8 +312,8 @@ Vehicle.prototype.receive = function(msg)
         return;
     }
 
-    if((event == undefined)||(event.type == undefined)||
-       (event.name == undefined))
+    if((event === undefined)||(event.type === undefined)||
+       (event.name === undefined))
     {
         self.iErrorCB("BADLY FORMED MESSAGE: "+msg);
         return;
