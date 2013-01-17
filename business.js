@@ -47,7 +47,7 @@ function connected()
     vehicle.subscribe(["MachineGunTurretStatus"]);
     vehicle.subscribe(["AirIntakeTemperature"]);*/
 
-    vehicle.subscribe(["VehicleSpeed","EngineSpeed","MassAirFlow","AirIntakeTemperature","ThrottlePosition","EngineCoolantTemperature", "TransmissionGearStatus",
+    vehicle.subscribe(["VehicleSpeed","EngineSpeed","MassAirFlow","AirIntakeTemperature","ThrottlePosition","EngineCoolantTemperature", "TransmissionShiftPosition",
                        "SteeringWheelAngle","MachineGunTurretStatus"]);
 
     document.addEventListener("VehicleSpeed",function(data) {
@@ -72,7 +72,7 @@ function connected()
                                   $('#rpmNeedle').css("-webkit-transform","rotate("+needleDegs+"deg)");
                               },false);
 
-    document.addEventListener("TransmissionGearStatus",function(data) {
+    document.addEventListener("TransmissionShiftPosition",function(data) {
                                   value = data.value.value;
 								  if(value == 128)
 									  $('#gear').text('Reverse');
