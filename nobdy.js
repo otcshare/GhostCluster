@@ -1,6 +1,6 @@
 function NobdyStream(type) {
 	this.type = type;
-
+	var blah;
 	this.propName = type.charAt(0).toLowerCase() + type.slice(1);
 
 	this[this.propName] = "";
