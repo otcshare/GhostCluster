@@ -245,6 +245,30 @@ Vehicle.prototype.get = function(namelist, successCB, errorCB)
     this.send(obj, successCB, errorCB);
 }
 
+Vehicle.prototype.getHistory = function(namelist, beginDate, endDate, successCB, errorCB)
+{
+    if(namelist.length <= 0)
+    {
+        return;
+    }
+
+    var dataobj = {
+		"property" : namelist,
+		"timeBegin" : (beginDate.getTime() / 1000).toString(),
+		"timeEnd" : (endDate.getTime() / 1000).toString(),
+		"sequenceBegin" : "-1",
+		"sequenceEnd" : "-1"
+	}
+    
+    var obj = {
+        "type" : "method",
+        "name": "getRanged",
+        "transactionid" : this.generateTransactionId(),
+        "data" : dataobj		
+    };
+    this.send(obj, successCB, errorCB);
+}
+
 Vehicle.prototype.set = function(namelist, valuelist, successCB, errorCB)
 {
     if((namelist.length != valuelist.length)||(namelist.length <= 0))
